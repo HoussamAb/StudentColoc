@@ -75,7 +75,7 @@ class RegisterController extends Controller
     protected function apiCreate(Request $request)
     {
         return User::create([
-            'name' => $request['name'],
+            'username' => $request['username'],
             'email' => $request['email'],
             'password' => Hash::make($request['password']),
         ])->toJson();
