@@ -56,7 +56,7 @@ class LoginController extends Controller
             }
         }
     }
-        return '{"auth":"false"}';
+        return '{}';
     }
 
     protected function apiUpdate(Request $request)
@@ -77,7 +77,7 @@ class LoginController extends Controller
 
         }
     }
-        return '{"auth":"false"}';
+        return '{}';
     }
 
 }
