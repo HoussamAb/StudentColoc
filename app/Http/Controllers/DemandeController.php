@@ -42,7 +42,7 @@ class DemandeController extends Controller
 
         $demande->save();
         return new DemandeResource($demande);
-        
+
     }
 
     /**
@@ -61,7 +61,7 @@ class DemandeController extends Controller
         {
             return new DemandeResource($demande->first());
         }
-        
+
         return "{data:[]}";
     }
 
