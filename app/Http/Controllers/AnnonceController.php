@@ -15,7 +15,7 @@ class AnnonceController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-      
+
      /**
      * Show the form for creating a new resource.
      *
@@ -38,12 +38,13 @@ class AnnonceController extends Controller
      */
     public function store(Request $request)
     {
-        
+
         $annonce = $request->isMethod('put') ? Annonce::find(Request("id")) : new Annonce;
-        
+
         $annonce->capacity = $request->input('capacity');
         $annonce->address = $request->input('address');
         $annonce->details = $request->input('details');
+        $annonce->details = $request->input('title');
 
         if($request->has('images1'))
         {
@@ -55,7 +56,7 @@ class AnnonceController extends Controller
             $image = str_replace('data:image/png;base64,', '', $image);
             $image = str_replace(' ', '+', $image);
             $imageName = time().session_id().\Str::random(10).'.'.'png';
-            File::put(public_path("importedImages"). '\\' . $imageName, base64_decode($image));  
+            File::put(public_path("importedImages"). '\\' . $imageName, base64_decode($image));
             $annonce->images1=$imageName;
         }
 
@@ -69,10 +70,10 @@ class AnnonceController extends Controller
             $image = str_replace('data:image/png;base64,', '', $image);
             $image = str_replace(' ', '+', $image);
             $imageName = time().session_id().\Str::random(10).'.'.'png';
-            File::put(public_path("importedImages"). '\\' . $imageName, base64_decode($image));  
+            File::put(public_path("importedImages"). '\\' . $imageName, base64_decode($image));
             $annonce->images2=$imageName;
         }
-        
+
         if($request->has('images3'))
         {
             if($request->images3!='' && File::exists(public_path("importedImages"). '\\' .$annonce->images3))
@@ -83,10 +84,10 @@ class AnnonceController extends Controller
             $image = str_replace('data:image/png;base64,', '', $image);
             $image = str_replace(' ', '+', $image);
             $imageName = time().session_id().\Str::random(10).'.'.'png';
-            File::put(public_path("importedImages"). '\\' . $imageName, base64_decode($image));  
+            File::put(public_path("importedImages"). '\\' . $imageName, base64_decode($image));
             $annonce->images3=$imageName;
         }
-        
+
 
 
 
@@ -99,7 +100,7 @@ class AnnonceController extends Controller
 
         $annonce->save();
             return new AnnonceResource($annonce);
-        
+
     }
 
     /**
@@ -117,7 +118,7 @@ class AnnonceController extends Controller
         {
             return new AnnonceResource($annonce->first());
         }
-        
+
         return "{data:[]}";
     }
 

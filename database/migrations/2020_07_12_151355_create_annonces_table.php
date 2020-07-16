@@ -18,6 +18,7 @@ class CreateAnnoncesTable extends Migration
             $table->bigIncrements('id');
             $table->integer('capacity');
             $table->string('address');
+            $table->string('title');
             $table->string('details');
             $table->string('images1');
             $table->string('images2');
