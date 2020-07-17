@@ -32,7 +32,7 @@ class AnnonceController extends Controller
     }*/
     public function  index(){
         $annonces = Annonce::all();
-        return "{data:$annonces}";
+        return "{\"data\":$annonces}";
     }
 
     /**
