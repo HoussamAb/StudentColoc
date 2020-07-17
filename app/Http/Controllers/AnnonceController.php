@@ -45,54 +45,57 @@ class AnnonceController extends Controller
         $annonce->address = $request->input('address');
         $annonce->details = $request->input('details');
         $annonce->details = $request->input('title');
+        $annonce->images1 = $request->input('images1');
+        $annonce->images2 = $request->input('images2');
+        $annonce->images3 = $request->input('images3');
 
-        if($request->has('images1'))
-        {
-            if(File::exists(public_path("importedImages"). '\\' .$annonce->images1))
-            {
-                File::delete(public_path("importedImages"). '\\' .$annonce->images1);
-            }
-            /*$image = $request->images1;  // your base64 encoded
-            $image = str_replace('data:image/png;base64,', '', $image);
-            $image = str_replace(' ', '+', $image);
-            $imageName = time().session_id().\Str::random(10).'.'.'png';
-            File::put(public_path("importedImages"). '\\' . $imageName, base64_decode($image));
-            $annonce->images1=$imageName;
-            */
+        /* if($request->has('images1'))
+         {
+             if(File::exists(public_path("importedImages"). '\\' .$annonce->images1))
+             {
+                 File::delete(public_path("importedImages"). '\\' .$annonce->images1);
+             }
+             $image = $request->images1;  // your base64 encoded
+             $image = str_replace('data:image/png;base64,', '', $image);
+             $image = str_replace(' ', '+', $image);
+             $imageName = time().session_id().\Str::random(10).'.'.'png';
+             File::put(public_path("importedImages"). '\\' . $imageName, base64_decode($image));
+             $annonce->images1=$imageName;
+
             $annonce->$request->images1;
-        }
+        }*/
 
-        if($request->has('images2'))
-        {
-            if($request->images2!='' && File::exists(public_path("importedImages"). '\\' .$annonce->images2))
-            {
-                File::delete(public_path("importedImages"). '\\' .$annonce->images2);
-            }
-            /*$image = $request->images2;  // your base64 encoded
-            $image = str_replace('data:image/png;base64,', '', $image);
-            $image = str_replace(' ', '+', $image);
-            $imageName = time().session_id().\Str::random(10).'.'.'png';
-            File::put(public_path("importedImages"). '\\' . $imageName, base64_decode($image));
-            $annonce->images2=$imageName;
-            */
+        /* if($request->has('images2'))
+         {
+             if($request->images2!='' && File::exists(public_path("importedImages"). '\\' .$annonce->images2))
+             {
+                 File::delete(public_path("importedImages"). '\\' .$annonce->images2);
+             }
+             $image = $request->images2;  // your base64 encoded
+             $image = str_replace('data:image/png;base64,', '', $image);
+             $image = str_replace(' ', '+', $image);
+             $imageName = time().session_id().\Str::random(10).'.'.'png';
+             File::put(public_path("importedImages"). '\\' . $imageName, base64_decode($image));
+             $annonce->images2=$imageName;
+
             $annonce->$request->images2;
 
-        }
+        }*/
 
-        if($request->has('images3'))
+        /*if($request->has('images3'))
         {
             if($request->images3!='' && File::exists(public_path("importedImages"). '\\' .$annonce->images3))
             {
                 File::delete(public_path("importedImages"). '\\' .$annonce->images3);
             }
             $image = $request->images3;  // your base64 encoded
-           /* $image = str_replace('data:image/png;base64,', '', $image);
+            $image = str_replace('data:image/png;base64,', '', $image);
             $image = str_replace(' ', '+', $image);
             $imageName = time().session_id().\Str::random(10).'.'.'png';
             File::put(public_path("importedImages"). '\\' . $imageName, base64_decode($image));
-            $annonce->images3=$imageName;*/
+            $annonce->images3=$imageName;
             $annonce->$request->images3;
-        }
+        }*/
 
 
 
