@@ -44,7 +44,7 @@ class AnnonceController extends Controller
         $annonce->capacity = $request->input('capacity');
         $annonce->address = $request->input('address');
         $annonce->details = $request->input('details');
-        $annonce->details = $request->input('title');
+        $annonce->title = $request->input('title');
         $annonce->images1 = $request->input('images1');
         $annonce->images2 = $request->input('images2');
         $annonce->images3 = $request->input('images3');
