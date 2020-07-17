@@ -52,12 +52,14 @@ class AnnonceController extends Controller
             {
                 File::delete(public_path("importedImages"). '\\' .$annonce->images1);
             }
-            $image = $request->images1;  // your base64 encoded
+            /*$image = $request->images1;  // your base64 encoded
             $image = str_replace('data:image/png;base64,', '', $image);
             $image = str_replace(' ', '+', $image);
             $imageName = time().session_id().\Str::random(10).'.'.'png';
             File::put(public_path("importedImages"). '\\' . $imageName, base64_decode($image));
             $annonce->images1=$imageName;
+            */
+            $annonce->images1;
         }
 
         if($request->has('images2'))
@@ -66,12 +68,15 @@ class AnnonceController extends Controller
             {
                 File::delete(public_path("importedImages"). '\\' .$annonce->images2);
             }
-            $image = $request->images2;  // your base64 encoded
+            /*$image = $request->images2;  // your base64 encoded
             $image = str_replace('data:image/png;base64,', '', $image);
             $image = str_replace(' ', '+', $image);
             $imageName = time().session_id().\Str::random(10).'.'.'png';
             File::put(public_path("importedImages"). '\\' . $imageName, base64_decode($image));
             $annonce->images2=$imageName;
+            */
+            $annonce->images2;
+
         }
 
         if($request->has('images3'))
@@ -81,11 +86,12 @@ class AnnonceController extends Controller
                 File::delete(public_path("importedImages"). '\\' .$annonce->images3);
             }
             $image = $request->images3;  // your base64 encoded
-            $image = str_replace('data:image/png;base64,', '', $image);
+           /* $image = str_replace('data:image/png;base64,', '', $image);
             $image = str_replace(' ', '+', $image);
             $imageName = time().session_id().\Str::random(10).'.'.'png';
             File::put(public_path("importedImages"). '\\' . $imageName, base64_decode($image));
-            $annonce->images3=$imageName;
+            $annonce->images3=$imageName;*/
+            $annonce->images3;
         }
 
 
