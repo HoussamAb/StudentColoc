@@ -40,7 +40,6 @@ class AnnonceController extends Controller
     {
 
         $annonce = $request->isMethod('put') ? Annonce::find(Request("id")) : new Annonce;
-
         $annonce->capacity = $request->input('capacity');
         $annonce->address = $request->input('address');
         $annonce->details = $request->input('details');
