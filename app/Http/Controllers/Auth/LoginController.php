@@ -61,7 +61,7 @@ class LoginController extends Controller
 
     protected function apiUpdate(Request $request)
     {
-        if($request->has("id") && $request->has("telephone") && $request->has("username") && $request->has("name") ){
+        if($request->has("id") && $request->has("telephone") && $request->has("username")  ){
         $user= User::where('id',$request->id)->get();
 
         if($user->count()>0)
@@ -69,7 +69,6 @@ class LoginController extends Controller
             $user=$user->first();
             $user->telephone=$request->telephone;
             $user->username=$request->username;
-            $user->name=$request->name;
             if($user->save())
             {
                 return $user->toJson();
