@@ -21,6 +21,7 @@ class AnnonceController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+     /*
     public function index()
     {
         // Get annonces
@@ -28,6 +29,10 @@ class AnnonceController extends Controller
 
         // Return collection of annonces as a resource
         return AnnonceResource::collection($annonces);
+    }*/
+    public function  index(){
+        $annonces = Annonce::all();
+        return "{data:[$annonces]}";
     }
 
     /**
