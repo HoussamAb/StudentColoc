@@ -22,11 +22,11 @@
             <div class="form-row">
                 <div class="form-group mb-3 col-md-5">
                   <label for="inputAddress">username</label>
-                  <input type="text" class="form-control" name="username" id="inputAddress" placeholder="cordonnees" value="{{Auth::user()->username}}">
+                  <input type="text" class="form-control" name="username" id="inputAddress" placeholder="username" value="{{Auth::user()->username}}">
                 </div>
                 <div class="form-group mb-3 col-md-5">
                   <label for="commentaire">&#9742; Telephone</label>
-                  <input type="text" class="form-control" name="telephone" id="inputAddress" placeholder="commentaire" value="{{Auth::user()->telephone}}">
+                  <input type="text" class="form-control" name="telephone" id="inputAddress" placeholder="téléphone" value="{{Auth::user()->telephone}}">
                 </div>
               </div>
               <button class="btn blue">Enregistrer</button>

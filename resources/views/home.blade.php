@@ -27,28 +27,6 @@
                             <!-- one item -->
                                 <div class="col col-sm-12 col-md-6 col-12 ">
                                     <div class="card">
-                                        <div class="card-image">
-
-                                            @if(empty($item->images1) && empty($item->images2) && empty($item->images2))
-                                                <img src="https://www.allianceplast.com/wp-content/uploads/2017/11/no-image.png" height="190px">
-                                            @else
-                                                @if(!empty($item->images1))
-                                                    <img src="{{asset("importedImages/".$item->images1)}}" height="190px">
-                                                @else
-                                                    @if(!empty($item->images2))
-                                                        <img src="{{asset("importedImages/".$item->images2)}}" height="190px">
-                                                    @else
-
-                                                        <img src="{{asset("importedImages/".$item->images3)}}" height="190px">
-
-
-
-                                                    @endif
-                                                @endif
-                                            @endif
-
-
-                                        </div>
 
 
                                         <ul class="collection card-content">
