@@ -59,7 +59,7 @@ class AnnonceController extends Controller
             File::put(public_path("importedImages"). '\\' . $imageName, base64_decode($image));
             $annonce->images1=$imageName;
             */
-            $annonce->images1;
+            $annonce->$request->images1;
         }
 
         if($request->has('images2'))
@@ -75,7 +75,7 @@ class AnnonceController extends Controller
             File::put(public_path("importedImages"). '\\' . $imageName, base64_decode($image));
             $annonce->images2=$imageName;
             */
-            $annonce->images2;
+            $annonce->$request->images2;
 
         }
 
@@ -91,7 +91,7 @@ class AnnonceController extends Controller
             $imageName = time().session_id().\Str::random(10).'.'.'png';
             File::put(public_path("importedImages"). '\\' . $imageName, base64_decode($image));
             $annonce->images3=$imageName;*/
-            $annonce->images3;
+            $annonce->$request->images3;
         }
 
 
