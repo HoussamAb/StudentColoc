@@ -20,9 +20,9 @@ class CreateAnnoncesTable extends Migration
             $table->string('address');
             $table->string('title');
             $table->string('details');
-            $table->string('images1');
-            $table->string('images2');
-            $table->string('images3');
+            $table->longText('images1');
+            $table->longText('images2');
+            $table->longText('images3');
             $table->string('position');
             $table->integer('prix');
             $table->integer('rate');
